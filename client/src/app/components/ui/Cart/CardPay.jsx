@@ -25,7 +25,7 @@ const CardPay = () => {
                         type="text"
                         id="typeName"
                         className="form-control form-control-lg"
-                        siez="17"
+                        size="17"
                         placeholder="Cardholder's Name"
                     />
                     <label className="form-label" htmlFor="typeName">
@@ -38,7 +38,7 @@ const CardPay = () => {
                         type="text"
                         id="typeText"
                         className="form-control form-control-lg"
-                        siez="17"
+                        size="17"
                         placeholder="1234 5678 9012 3457"
                         minLength="19"
                         maxLength="19"
@@ -53,11 +53,11 @@ const CardPay = () => {
                         <div className="form-outline form-white">
                             <input
                                 type="text"
-                                id1="typeExp"
+                                id="typeExp"
                                 className="form-control form-control-lg"
                                 placeholder="MM/YY"
                                 size="7"
-                                id="exp"
+                                // id="exp"
                                 minLength="7"
                                 maxLength="7"
                             />
