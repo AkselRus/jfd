@@ -99,7 +99,7 @@ const AddProduct = () => {
         const isValid = validate();
         if (!isValid) return;
         if (selectedImage) {
-            const newData = await { ...data, image: selectedImage[0].fileUrl };
+            const newData = await { ...data, image: selectedImage[0]?.fileUrl };
             dispatch(createProduct(newData));
             window.location.assign("/admin");
         } else dispatch(createProduct(data));
@@ -107,7 +107,7 @@ const AddProduct = () => {
     const handleSubmitUpdate = async (e) => {
         e.preventDefault();
         if (selectedImage) {
-            const newData = await { ...data, image: selectedImage[0].fileUrl };
+            const newData = await { ...data, image: selectedImage[0]?.fileUrl };
             dispatch(updateProduct(newData));
             window.location.assign("/admin");
         } else dispatch(updateProduct(data));
