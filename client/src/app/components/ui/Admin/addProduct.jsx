@@ -171,7 +171,7 @@ const AddProduct = () => {
                                     name="avatar"
                                     width={"250px"}
                                     className="card-img-top"
-                                    src={selectedImage[0].fileUrl}
+                                    src={selectedImage[0]?.fileUrl}
                                 />
                                 <br />
                                 <button
