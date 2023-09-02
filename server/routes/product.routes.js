@@ -55,7 +55,7 @@ router.delete("/:prodId", async (req, res) => {
     try {
         const { prodId } = req.params;
         removeProduct(prodId);
-        await Product.findById(prodId);
+        await Product.findByIdAndDelete(prodId);
     } catch (error) {
         res.status(500).json({
             massage: "На сервере произошла ошибка. Попробуйте позже",

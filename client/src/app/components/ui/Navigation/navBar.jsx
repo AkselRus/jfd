@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import {
     Container,
     Navbar,
@@ -20,17 +20,14 @@ const navBar = () => {
     const shopList = user?.purchases;
 
     const listBookmark = useSelector(getListBookMark());
-    const [bookmark, setBookmark] = useState();
-    useEffect(() => {
-        setBookmark(listBookmark);
-    }, []);
 
     const handleClickDelete = (id) => {
-        if (isLoggedIn && id) {
-            const prod = bookmark.filter((p) => p._id === id);
+        if (isLoggedIn && listBookmark && id) {
+            const arr = listBookmark || [];
+            const prod = arr.filter((p) => p._id === id);
             const newProd = { ...prod[0], bookmark: false };
             dispatch(updateProduct(newProd));
-        }
+        } else console.log("error bookmark");
     };
 
     const offcanvasElementList = Array.prototype.slice.call(

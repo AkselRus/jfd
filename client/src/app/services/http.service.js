@@ -13,7 +13,6 @@ http.interceptors.request.use(
         const expiresDate = localStorageService.getTokenExpiresDate();
         const refreshToken = localStorageService.getRefreshToken();
         const isExpired = refreshToken && expiresDate < Date.now();
-        console.log(config.url);
         if (configFile.isFireBase) {
             const containSlash = /\/$/gi.test(config.url);
             config.url =
@@ -37,12 +36,12 @@ http.interceptors.request.use(
                 config.params = { ...config.params, auth: accessToken };
             }
         } else {
-            console.log(config.url);
-            const containSlash = /\/$/gi.test(config.url);
-            console.log(containSlash);
+            // console.log(config.url);
+            // const containSlash = /\/$/gi.test(config.url);
+            // console.log(containSlash);
 
-            config.url = containSlash ? config.url.slice(0, -1) : config.url;
-            console.log(config.url);
+            // config.url = containSlash ? config.url.slice(0, -1) : config.url;
+            // console.log(config.url);
 
             if (isExpired) {
                 localStorage.clear();
